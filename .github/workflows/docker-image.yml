@@ -23,13 +23,14 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Print Build the Docker image
-      run: echo "${{env.MONGO_DB_PASS}} ${{env.MONGO_DB_USERNAME}}"
+      run: echo ${{env.MONGO_DB_PASS}} ${{env.MONGO_DB_USERNAME}}
       
     - name: Build the Docker image
       run: |
         ./build.sh ${{env.MONGO_DB_PASS}} ${{env.MONGO_DB_USERNAME}}
         echo "Created"
-        docker-compose -f docker-compose.yml --env-file .env up
+        #docker-compose -f docker-compose.yml --env-file .env up
+        #docker exec -it docker-java "java -jar /code/target/user_api-0.0.1-SNAPSHOT.jar"
       
     - name: Build and push Docker image
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
