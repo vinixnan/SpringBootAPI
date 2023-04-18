@@ -22,12 +22,18 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+      with:
+        images: vinixnan/springapp
+        
     - name: Print Build the Docker image
       run: echo ${{env.MONGO_DB_PASS}} ${{env.MONGO_DB_USERNAME}}
       
     - name: Build the Docker image
       run: |
-        ./build.sh ${{env.MONGO_DB_PASS}} ${{env.MONGO_DB_USERNAME}}
+        #./build.sh ${{env.MONGO_DB_PASS}} ${{env.MONGO_DB_USERNAME}}
         echo "Created"
         #docker-compose -f docker-compose.yml --env-file .env up
         #docker exec -it docker-java "java -jar /code/target/user_api-0.0.1-SNAPSHOT.jar"
