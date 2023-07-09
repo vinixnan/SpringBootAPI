@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 MONGO_USERNAME=$1
 MONGO_PASSWORD=$2
