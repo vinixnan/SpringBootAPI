@@ -13,4 +13,4 @@ COPY . /code/
 RUN cp /code/src/main/resources/application.properties /code/src/main/resources/application.properties_org
 RUN cd /code/ && mvn clean install
 EXPOSE 80
-CMD ["sh /code/update_mongo_vars.sh && mvn spring-boot:run" ]
+ENTRYPOINT ["sh /code/update_mongo_vars.sh && mvn spring-boot:run" ]
