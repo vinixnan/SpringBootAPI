@@ -27,7 +27,7 @@ services:
     build: .
     container_name: docker-java
     ports:
-      - '8102:8102'
+      - '8102:80'
     links:
       - mongodb:mongodb
     depends_on:
