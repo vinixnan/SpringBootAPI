@@ -71,6 +71,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <arguments>
+                        <argument>spring.data.mongodb.host</argument>
+                        <argument>spring.data.mongodb.username</argument>
+                        <argument>spring.data.mongodb.password</argument>
+                    </arguments>
                     <executable>true</executable>
                     <excludes>
                         <exclude>
