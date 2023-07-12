@@ -22,4 +22,4 @@ COPY --from=maven ${DEPENDENCY}/UserApi-0.0.1-SNAPSHOT.jar /app/
 EXPOSE 80
 #$ java -jar myapp.jar --spring.application.json='{"my":{"name":"test"}}'
 
-CMD ["java", "-jar", "/app/UserApi-0.0.1-SNAPSHOT.jar", "-Dspring-boot.run.arguments='--spring.data.mongodb.host=$MONGO_URL --spring.data.mongodb.username=$MONGO_INITDB_ROOT_USERNAME --spring.data.mongodb.password=$MONGO_INITDB_ROOT_PASSWORD'"]
+CMD ["java", "-jar", "/app/UserApi-0.0.1-SNAPSHOT.jar"]
